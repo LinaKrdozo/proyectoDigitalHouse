@@ -1,0 +1,158 @@
+body{
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    height: 117px;
+}
+
+main{
+    flex: auto;
+}
+
+.pie{
+    height: 375px;
+}
+
+.titulo-registro{
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    padding-top: 15px;
+}
+
+.form-container {
+    padding: 10px;
+    text-align: center;
+}
+
+.input-text,
+.input-email,
+.input-password,
+.input-date {
+    width: 90vw;
+    font-size: 18px;
+    padding: 5px;
+}
+
+form div,
+form p {
+    margin-bottom: 10px;
+}
+
+.user-profile-container,
+.intereses-container {
+    margin-left: 15px;
+}
+
+form button {
+    width: 90vw;
+    padding: 10px 20px;
+    background-color: #EEBA0B;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 450ms;
+}
+
+button:hover {
+    background-color: #EEBA0B;
+}
+
+form button a{
+    color: black;
+}
+
+.link-register-login{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.link-register-login a{
+    color: orangered;
+    margin-left: 5px;
+}
+
+.recuerdame {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.restablecer-contraseña{
+    text-align: center;
+}
+.text-danger{
+    color: #9D2A11;
+}
+
+.is-invalid {
+    border: 2px solid #9D2A11;
+  }
+
+  /*-------------------------Inicia estilos de validacion----------------*/
+.hidden_item {
+    display: none;
+}
+.visible_item {
+    display: block;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    height: auto;
+    padding: 5px;
+    margin-bottom: 15px; 
+}
+.help-message {
+    padding: 5px 0;
+}
+.valid {
+    color: green;
+    border-color: green;
+}
+.invalid {
+    color: red;
+    border-color: red;
+}
+
+@media (min-width: 750px) {
+
+    .input-text,
+    .input-email,
+    .input-password,
+    .input-date {
+        width: 40vw;
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    form button {
+        width: 40vw;
+    }
+
+    .user-profile-container,
+    .intereses-container {
+        text-align: justify;
+        margin-left: 40%;
+        margin-bottom: 20px;
+    }
+    .pie-pagina__seccion2 h4 {
+        text-align: center;
+    }
+}
+
+@media (768px <= width) {
+    .pie{
+        height: 340px;
+    }
+}
+@media (1024px <= width) {
+    .pie{
+        height: 242px;
+    }
+}

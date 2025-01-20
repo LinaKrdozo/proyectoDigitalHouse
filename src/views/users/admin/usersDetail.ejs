@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--head partial-->
+    <%- include('../../partials/head', {css:'/css/product-detail.css'}); %>
+    <!--fin partial-->
+</head>
+  <body class="cuerpo">
+      <%- include('../../partials/header'); %>
+    <main class="principal">
+      
+        <section class="principal__section section--migadepan">
+          <div class="contenedor contenedor--migadepan">
+            <ol class="lista lista--migadepan">
+                <li class="item__lista"><i class="fa-solid fa-house"></i></li>
+                <li class="item__lista">detalle Usuario</li>
+            </ol> 
+          </div>
+        </section>
+        <section class="contenedor contenedor--box">
+          <div class="contenedor-formulario">
+            <section>
+              <%- include('../../partials/userCardDetail'); %> 
+            </section>
+          </div>
+        </section>
+    </main>
+    <%- include('../../partials/footer'); %>
+      <%- include('../../partials/scripts'); %>
+  </body>
+</html>

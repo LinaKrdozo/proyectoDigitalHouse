@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head', {css:'/css/product-create-edit.css'}); %>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <main class="principal">
+            <section class="principal__section section--migadepan">
+                <div class="contenedor contenedor--migadepan">
+                  <%- include('../partials/breadcrumb', {local: 'Editar'}); %>
+                </div>
+            </section>
+            <div class="contenedor contenedor--crear">
+                <div class="contenedor-formulario">
+                    <h2 class="title">Editar producto</h2>
+                    <form action="/productos/<%=producto.id%>?_method=PUT" method="POST" class="form-create" enctype="multipart/form-data">
+                        <div>
+                            <div>
+                                <label for="title">Nombre del producto:
+                                    <input type="text" class="input-text" placeholder="Nombre del producto"
+                                        name="title" value="<%= producto.title %>" id="title" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label for="description">Descripción
+                                    <input type="text" class="input-text" placeholder="Descripcion" name="description"
+                                        value="<%= producto.description %>" id="description" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label>Destacado</label>
+                                
+                                <% let checked = producto.popular ? "1" : "0" %>
+                                
+                                <div class="checkbox-container yellow">
+                                    <input type="checkbox" name="popular" <%= producto.popular ? "checked" : "" %> id="toggle" />
+                                    <label for="toggle"></label>
+                                </div>
+                            </div>
+                            <p>
+                                <label for="categoria_id" class="form-label">Categoria: </label>
+                                <select name="categoria_id" id="" required>
+                                    <% categorias.forEach(categoria => { %>
+                                    <option value="<%= categoria.id %>" <% if (producto.categoria_id == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.name %></option>
+                                    <% }); %>
+                                </select>
+                            </p>
+
+                            <div>
+                                <label for="cost">Precio
+                                    <input type="number" class="input-text" placeholder="Precio" name="cost" id="cost" value="<%= producto.cost %>"  required  />
+                                </label>
+                            </div>
+                            <div>
+                                <label for="img">Foto de producto</label>
+                                <picture class="compra__imagen">
+                                    <img class="image imagen--productos" src="/<%= producto.img %>" alt="Miel">
+                                </picture>
+                                <input type="file" name="img" />
+                            </div>
+                            <button type="submit" class="submit">Editar producto</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer'); %>
+             <%- include('../partials/scripts'); %>    
+
+</body>
+
+</html>

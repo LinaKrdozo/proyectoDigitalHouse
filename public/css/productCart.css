@@ -1,0 +1,549 @@
+/** >>>>>>>>>>>>>>>>>>>>>>>>>>> BODY <<<<<<<< */
+body{
+  width: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* Estilos generales tabla */
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Ocultar los bordes internos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  border-spacing: 0; /* Espaciado entre las celdas */
+  background-color: #f2f2f2;
+}
+
+.table th, .table td {
+  padding: 14px; /* Aumento del padding para hacer los campos un poco más grandes */
+  text-align: left;
+  background-color: #f2f2f2; /* Fondo gris muy claro */
+  color: #333; /* Color de texto gris oscuro */
+  font-size: 14px; /* Tamaño de fuente */
+}
+
+.table th {
+  background-color: #CF5C36; /* Fondo naranja */
+  color: #ffffff; /* Color de texto blanco */
+  font-weight: bold;
+}
+
+.th-lg {
+  width: 30%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cartRows td {
+  vertical-align: middle;
+}
+
+.cartRows td:nth-child(1),
+.cartRows td:nth-child(6) {
+  width: 50px;
+}
+
+.cartRows2 td {
+  vertical-align: middle;
+}
+
+.cartRows2 td:nth-child(1),
+.cartRows2 td:nth-child(6) {
+  width: 50px;
+}
+
+/* Estilos para filas alternadas */
+.table tbody tr:nth-child(even) {
+  background-color: #f7f7f7; /* Fondo gris claro más suave para filas pares */
+}
+
+/* Estilos para hover sobre filas */
+.table tbody tr:hover {
+  background-color: #eeba0b; /* Fondo amarillo al hacer hover */
+  color: #ffffff; /* Texto blanco al hacer hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+.section--productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.compra {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 21px rgb(100, 100, 100, 0.5);
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.compra:last-child {
+  margin-bottom: 0;
+}
+
+.compra__columna{
+  display: flex;
+  width: calc(100% / 3);
+  padding: 0 10px;
+}
+
+.columna--imagen {
+  display: none;
+}
+
+.columna--precio {
+  width: 50%;
+}
+
+.compra__precio,
+.compra__titulo {
+  font-size: 16px;
+}
+
+.columna--informacion {
+  flex-direction: column;
+}
+.columna--cantidad {
+  justify-content: center;
+}
+
+.compra__cantidad {
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.columna--precio {
+  justify-content: space-around;
+}
+
+.compra__precio {
+  display: flex;
+  align-items: center;
+}
+
+.compra__icon {
+  font-size: 30px;
+  color: #CF5C36;
+}
+
+.imagen--compra {
+  max-width: 50px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.section--destacados {
+  background-color: #c5c5c5;
+}
+
+.contenedor--tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px;
+}
+
+.contenedor__productos {
+  width: 100%;
+}
+
+.contenedor__pago {
+  background-color: #ebebeb;
+  width: 100%;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.pago__boton {
+  background-color: #CF5C36;
+  padding: 10px;
+  border: 0;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.pago__texto {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.pago__costo {
+  font-size: 18px;
+}
+
+.texto--total,
+.costo--total{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.principal__titulo-section {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: calc((1200px / 3) - 40px);
+  display: block;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 21px rgb(100, 100, 100, 0.5);
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.tarjeta__encabezado {
+  margin-bottom: 15px;
+}
+
+.tarjeta__titulo {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tarjeta__descripcion{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.imagen--producto{
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.contenedor--botones{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  gap: 10px;
+}
+
+.tarjeta__precio {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.boton--more{
+  background-color: transparent;
+  color: #CF5C36;
+}
+.boton--more:hover{
+  color: #bd431a;
+  background-color: #ebebeb;
+}
+
+.boton--buy{
+  background-color: #CF5C36;
+  color: white;
+}
+
+.boton--buy:hover{
+  background-color: #bd431a;
+  color: white;
+}
+
+.pago__subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 20px;
+}
+
+.pago__line {
+  width: 100%;
+  height: 1px;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-sm{
+  border: none;
+}
+/** >>>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER <<<<<<<< */
+
+.pie{
+  height: 375px;
+}
+
+@media (min-width: 750px) {
+  .pie-pagina__seccion2 h4 {
+    text-align: center;
+  }
+}
+
+@media (768px <= width) {
+  .pie{
+      height: 340px;
+  }
+}
+
+@media (1024px <= width) {
+  .pie{
+      height: 242px;
+  }
+}
+
+/* -----------------------------Sacar para el Admin---------------------------------- */
+
+.lista__productos {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 21px rgb(100, 100, 100, 0.5);
+  color: #666;
+  margin-bottom: 40px;
+}
+.productos__item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap;
+  margin-bottom: 20px;
+}
+
+.productos__item-col {
+  flex: 1;
+  text-align: center;
+}
+.item--header {
+  background-color: #ebebeb;
+}
+.productos__button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox-container label {
+  background-color: #aaa;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 45px;
+  height: 25px;
+  z-index: 2;
+}
+
+.checkbox-container label::after {
+  content: ' ';
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5px;
+  left: 1px;
+  transform: translateX(0);
+  transition: transform 0.3s linear;
+  width: 20px;
+  height: 20px;
+  z-index: 3;
+}
+
+.checkbox-container input {
+  visibility: hidden;
+  position: absolute;
+  z-index: 2;
+}
+
+.checkbox-container input:checked + label + .active-circle {
+  transform: translate(-50%, -50%) scale(15);
+}
+
+.checkbox-container input:checked + label::after {
+  transform: translateX(calc(100% + 0.5px));
+}
+
+.active-circle {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 10px), calc(-50% - 2px)) scale(0);
+  transition: transform 0.6s ease-out;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+
+.checkbox-container.yellow .active-circle,
+.checkbox-container.yellow input:checked + label {
+  background-color: #eeba0b;
+}
+
+.productos__paragraph {
+  font-size: 12px;
+  max-width: 110px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.imagen--productos {
+  max-width: 50px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.buttons__page {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.productos--scrolls {
+  overflow-x: scroll;
+  max-width: calc(100vw - 40px);
+}
+
+.productos--size {
+  width: 1200px;
+}
+.principal__titulo-section {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-body {
+  overflow: auto;
+}
+
+.productos--order{
+  margin: auto;
+}
+
+.contenedor__pago h3{
+  padding-bottom: 20px;
+}
+
+.contenedor__pago > h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+  padding-bottom: 20px;
+}
+
+.pago__titulo {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+.totalAmount,
+.totalSubAmount {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+section.tarjeta__pie-seccion.seccion--informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (768px <= width) {
+  body {
+    width: auto;
+  }
+
+  .tarjeta {
+    max-width: calc((1200px / 4) - 40px);
+  }
+  .contenedor--tarjetas {
+    padding: 40px 0;
+  }
+
+  .compra__columna{
+    width: calc(100% / 4);
+    padding: 0 20px;
+  }
+  
+  .columna--imagen {
+    display: flex;
+  }
+
+  .imagen--compra {
+    max-width: 80px;
+  }
+  
+}
+
+@media (1024px <= width) {
+  .contenedor__productos{
+    width: calc(100% - 240px);
+  }
+
+  .contenedor__pago {
+    max-width: 300px;
+  }
+
+  .section--productos {
+    margin: 0px auto 40px;
+  }
+
+  .compra:last-child {
+    margin-bottom: 0;
+  }
+
+  .card {
+    flex-direction: row;
+  }
+}
+
+@media (1200px <= width) {
+  .productos--scrolls {
+    overflow-x: inherit;
+    max-width: none;
+  }
+  
+  .productos--size {
+    width: 100%;
+  }
+}

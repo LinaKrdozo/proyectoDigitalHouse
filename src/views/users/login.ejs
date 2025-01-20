@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--head partial-->
+    <%- include('../partials/head', {css:'/css/register-login.css'}); %>
+    <!--fin partial-->
+</head>
+<body>
+  <%- include('../partials/header'); %>
+  <main>
+    <div class="main">
+      <section class="principal__section section--migadepan">
+        <div class="contenedor contenedor--migadepan">
+           <%- include('../partials/breadcrumbUsers', {local: 'Login'}); %> 
+        </div>
+      </section>
+      <section class="contenedor contenedor--box">
+        <div class="contenedor-formulario">
+          <h2 class="titulo-registro">Mi Cuenta</h2>
+          <form action="/usuarios/login" method="POST" class="form-container" id="loginForm">
+            <div>
+              <label for="">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="E-mail"
+                  class="input-text"
+                />
+              </label>
+              <div id="email_error" class="error"></div>
+              <% if (locals.errors && errors.email){%>
+                <div class="text-danger">
+                  <%= errors.email.msg%>
+                </div>
+              <% } %>
+            </div>
+            <div>
+              <input
+                type="password"
+                placeholder="Ingrese su contraseña"
+                id="password"
+                name="password"
+                class="input-password"
+                />
+                <div id="password_error" class="error"></div>
+                <% if (locals.errors && errors.password){%>
+                  <div class="text-danger">
+                    <%= errors.password.msg%>
+                  </div>
+                <% } %>
+            </div>
+    
+            <div>
+              <button type="submit" class="boton_ingresar"><a href="/usuarios/perfil">Iniciar Sesión</a></button>
+            </div>
+            <div class="recuerdame">
+            <label  for="Recuerdame">Recuerdame</label>
+            <input type="checkbox" name="remember">
+            </div>
+            <p class="link-register-login">¿No tiene una cuenta? Registrate<a href="/usuarios/registro"> acá</a></p>
+          </form>
+        </div>
+      </section>
+
+
+
+    </div>
+  </main>
+
+  <%- include('../partials/footer'); %>
+    <%- include('../partials/scripts'); %>
+      <script src="/js/validacionesLogin.js"></script>
+</body>
+</html>

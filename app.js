@@ -16,18 +16,16 @@ app.use(session({
     saveUninitialized:false,
 }));
 
-const port = 3030;
-
 app.use(cookies());
 
 app.use(userLoggedMid);
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname,'src/views'));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
 app.use(methodOverride('_method')); 
 
@@ -39,4 +37,5 @@ app.use('/', indexRouter);
 
 app.get("*", (req, res) => res.status(404).send("404 not found. <br> ¡Houston, tenemos un problema!"));
 
+const port = 3030;
 app.listen(port, () => console.log(`Servidor Corriendo en el puerto ${port}`));

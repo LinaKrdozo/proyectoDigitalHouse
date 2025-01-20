@@ -3,7 +3,7 @@ module.exports = {
     "username": "root",
     "password": "root12345",
     "database": "digitalBees",
-    "host": "127.0.0.1",
+    "host": "/var/run/mysqld/mysqld.sock",
     "port": 3306,
     "dialect": "mysql"
   },
@@ -11,7 +11,7 @@ module.exports = {
     "username": "root",
     "password": "root12345",
     "database": "digitalBees",
-    "host": "127.0.0.1",
+    "host": "/var/run/mysqld/mysqld.sock",
     "port": 3306,
     "dialect": "mysql"
   },
@@ -19,7 +19,7 @@ module.exports = {
     "username": "root",
     "password": "root12345",
     "database": "digitalBees",
-    "host": "127.0.0.1",
+    "host": "/var/run/mysqld/mysqld.sock",
     "port": 3306, 
     "dialect": "mysql"
   }
